@@ -5,18 +5,40 @@ body{
     align-items: center;
 }
 
-.grid-container{
-    margin: 16px;
+.content{
+    flex: 1;
+    display: flex;
+    gap: 20px;
+}
+
+.menu-container{
+    border: 1px solid black;
+    border-radius: 4px;
+
     height: 70vh;
-    aspect-ratio: 1/1;
+    width: 200px;
+    flex-grow: 0;
+    padding: 8px;
+
     display: flex;
     flex-direction: column;
-    outline: black solid 1px;
+    align-items: center;
+}
+
+.grid-container{
+    border: 1px solid black;
+    border-radius: 4px;
+    
+    height: 70vh;
+    aspect-ratio: 1/1;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
 }
 
 .square{
     aspect-ratio: 1/1;
-    outline: red solid 1px;
+    outline: black solid 0.1px;
     flex: 1;
 }
 
