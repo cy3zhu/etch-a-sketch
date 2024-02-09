@@ -24,4 +24,14 @@ function populateGrid(){
     }
 }
 
+function changeColor(element){
+    element.style.backgroundColor = 'black'
+}
+
 window.addEventListener('load', populateGrid)
+
+gridContainer.addEventListener('mouseover', (event) => {
+    if(event.target.classList.value === "square"){
+        changeColor(event.target)
+    }
+})
