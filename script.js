@@ -35,3 +35,26 @@ gridContainer.addEventListener('mouseover', (event) => {
         changeColor(event.target)
     }
 })
+
+function clearGrid(){
+    while(gridContainer.firstChild){
+        gridContainer.removeChild(gridContainer.lastChild);
+    }
+}
+
+const changeGrid = document.querySelector('.change-grid')
+
+changeGrid.addEventListener('click', () => {
+    clearGrid();
+    let newGridSize = Number(window.prompt('How many squares per side from 0-100?'));
+    if(isValidSize(newGridSize)){
+        gridDimension = newGridSize;
+        populateGrid();
+    }else{
+        alert('Error - please enter a whole number, between 0-100');
+    }
+})
+
+function isValidSize(inputtedSize){
+    return inputtedSize > 0 && inputtedSize <= 100 && Number.isInteger(inputtedSize)
+}
