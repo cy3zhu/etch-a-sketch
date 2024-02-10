@@ -42,9 +42,13 @@ function clearGrid(){
     }
 }
 
-const changeGrid = document.querySelector('.change-grid')
+function isValidSize(inputtedSize){
+    return inputtedSize > 0 && inputtedSize <= 100 && Number.isInteger(inputtedSize)
+}
 
-changeGrid.addEventListener('click', () => {
+const changeGridButton = document.querySelector('.change-grid')
+
+changeGridButton.addEventListener('click', () => {
     clearGrid();
     let newGridSize = Number(window.prompt('How many squares per side from 0-100?'));
     if(isValidSize(newGridSize)){
@@ -55,6 +59,11 @@ changeGrid.addEventListener('click', () => {
     }
 })
 
-function isValidSize(inputtedSize){
-    return inputtedSize > 0 && inputtedSize <= 100 && Number.isInteger(inputtedSize)
-}
+const clearGridButton = document.querySelector('.clear-grid')
+
+clearGridButton.addEventListener('click', () => {
+    clearGrid();
+    populateGrid();
+})
+
+
